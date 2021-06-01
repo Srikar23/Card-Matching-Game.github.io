@@ -1,0 +1,37 @@
+body{
+    background-color: lightblue;
+    text-align: center;
+    
+}
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 47px;;
+    text-shadow: 20px;
+    text-decoration-thickness: 2px;
+}
+p.time{
+    font-size: 30px;
+}
+p.result{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 37px;
+}
+button
+{
+    width:85px;
+    color: aliceblue;
+    color: black;
+    border-radius: 10px;
+}
+div.game{
+    display: none;
+}
+img.card
+{
+    width: 170px;
+    height: 190px;
+    border-radius: 30px;
+    display:inline-table;
+    padding: 10px;
+    
+}
