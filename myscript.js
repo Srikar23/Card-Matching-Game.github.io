@@ -1,9 +1,10 @@
-var min,sec,timeId,name;
+var min,sec,timeId;
 var images ={"java":"http://is.am/4eux","python":"http://is.am/4eun","js":"http://is.am/4eum","cpp":"http://is.am/4euw \
 ","java1":"http://is.am/4eux","python1":"http://is.am/4eun","js1":"http://is.am/4eum","cpp1":"http://is.am/4euw"}
 
+var playerName={name :"Player"}
 function start(){
-    setTimeout(name =prompt("Please enter your name", "Player"),2000);
+    playerName.name = prompt("Please enter your name","player")
     min = 0,sec=0;
     timeId = setInterval(time,1000);
     files = ["cpp","cpp1","python1","python","java","java1","js1","js"]
@@ -59,7 +60,7 @@ function flip(card_id)
         if(count == 4)
         {
             clearInterval(timeId);
-            document.getElementById("result").innerHTML= name.toUpperCase()+" WoW!!";
+            document.getElementById("result").innerHTML= playerName.name.toUpperCase()+" WoW!!";
             setTimeout(reload,30000);
         }
     }
