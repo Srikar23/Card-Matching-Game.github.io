@@ -5,6 +5,8 @@ var images ={"java":"http://is.am/4eux","python":"http://is.am/4eun","js":"http:
 var playerName={name :"Player"}
 function start(){
     playerName.name = prompt("Please enter your name","player")
+    if(playerName.name == null)
+        playerName.name = "player1"
     min = 0,sec=0;
     timeId = setInterval(time,1000);
     files = ["cpp","cpp1","python1","python","java","java1","js1","js"]
@@ -25,7 +27,15 @@ function time()
         min+=1;
         sec = 0;
     }
-    document.getElementById("time").innerHTML=min+":"+sec;
+    if(min > 2)
+    {
+        clearInterval(timeId);
+        document.getElementById("result").innerHTML="Sorry "+playerName.name.toUpperCase()+" TimeOut!!";
+        setTimeout(reload,4000);
+    }
+
+    document.getElementById("minute").textContent ="0"+min+"";
+    document.getElementById("seconds").textContent = sec>9?sec+"":"0"+sec;
 }
 function randomNumber(min, max) { 
     min = Math.ceil(min);
@@ -37,7 +47,7 @@ var prev;
 var count = 0;
 function flip(card_id)
 {
-    var image = images[card_id+""];
+    var image = "images/"+card_id+".jpg";
     var card_obj = document.getElementById(card_id);    
     
     if(prev == null)
@@ -65,9 +75,12 @@ function flip(card_id)
         }
     }
     else
-    {
+    {   //reealing the card
+        card_obj.setAttribute("src",image);
+        setTimeout(card_obj.setAttribute("src","images/cover.jpg"),4000);
+
         var prev_card = document.getElementById(prev);
-        prev_card.setAttribute("src","http://is.am/4euk");
+        prev_card.setAttribute("src","images/cover.jpg");
         prev = null;
     }
 }

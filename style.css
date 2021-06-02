@@ -9,7 +9,15 @@ h1{
     text-shadow: 20px;
     text-decoration-thickness: 2px;
 }
-p.time{
+#minute,#seconds{
+    font-size: 30px;
+    background-color: gray;
+    border-style:inset;
+    box-shadow: 30px;
+    color: white;
+    border-radius: 10px;;
+}
+#time{
     font-size: 30px;
 }
 p.result{
@@ -33,5 +41,5 @@ img.card
     border-radius: 30px;
     display:inline-table;
     padding: 10px;
-    
+    box-shadow: 5px 5px grey;
 }
